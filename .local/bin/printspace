@@ -1,0 +1,3 @@
+#!/bin/sh
+
+df -h | grep /home | sed "s/\/dev\/sda2\s*/💾/;s/\/home//;s/G//g;s/\b[0-9]\{3\}\b\s*//g;s/\s*//" | sed "s/\s*//g"

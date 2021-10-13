@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sh ~/.local/src/alacritty-color-export/script.sh

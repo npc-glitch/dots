@@ -1,0 +1,10 @@
+#!/bin/sh
+while read file
+do
+        case "$1" in
+        "C-w")
+                /home/seb/.local/bin/bgset "$file" ;;
+	"C-r")
+		cp "$file" /home/seb/Pictures/wallpaperz ;;
+        esac
+done

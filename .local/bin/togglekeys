@@ -1,0 +1,10 @@
+#!/bin/sh
+
+bak=$(head -21 ~/.Xresources | grep color0 | sed "s/\*.color0: //g")
+fore=$(head -27 ~/.Xresources | grep color3 | sed "s/\*.color3: //g")
+
+sed -n "/static Key/,/quit,/p" ~/.local/src/suckless/dwm/config.h | \
+grep "{" | \
+sed "s/\s*{ //;s/MODKEY/Super+/g;s/,\s*//;s/|ShiftMask/Shift+/;s/XK_//g;s/,//g;s/{.v = //g;s/} }//g;s/{[^{]*$//g" | \
+grep -v "static" | \
+yad --text-info --back=$bak --fore=$fore --title=Keybindings --width=720 --height=720 --no-buttons --borders=0 --center

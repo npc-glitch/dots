@@ -1,0 +1,119 @@
+#!/bin/sh
+
+xrandr --output DP-2 --mode 2560x1440 --auto
+xrandr --output HDMI-0 --mode 1920x1080 --right-of DP-2 &
+setxkbmap -layout se &
+picom &
+xset r rate 300 50 &
+unclutter &
+dwmblocks &
+lxsession &
+dunst &
+nm-applet &
+gwe --hide-window &
+keepassxc &
+/home/seb/.local/bin/bgset &
+setxkbmap -layout se &
+flameshot &
+openrazer-daemon &
+pywalfox start &
+deluged -c ~/.config/deluge &
+rm /home/seb/.config/BetterDiscord/themes/pywal-discord-default.theme.css &
+tabletsettings &
+
+# MR KLEEN FOLDERS
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
+export GOPATH="$XDG_DATA_HOME"/.config/go
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java 
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export EDITOR=vim
+export BROWSER=librewolf
+xdg-mime default librewolf.desktop x-scheme-handler/http
+xdg-mime default librewolf.desktop x-scheme-handler/https
+
+pidof -s runit &&
+	! pidof -s pulseaudio >/dev/null 2>&1 &&
+	setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1
+
+# This is the list for lf icons:
+export LF_ICONS="di=📁:\
+fi=📃:\
+tw=🤝:\
+ow=📂:\
+ln=⛓:\
+or=❌:\
+ex=🎯:\
+*.txt=✍:\
+*.mom=✍:\
+*.me=✍:\
+*.ms=✍:\
+*.png=🖼:\
+*.webp=🖼:\
+*.ico=🖼:\
+*.jpg=📸:\
+*.jpe=📸:\
+*.jpeg=📸:\
+*.gif=🖼:\
+*.svg=🗺:\
+*.tif=🖼:\
+*.tiff=🖼:\
+*.xcf=🖌:\
+*.html=🌎:\
+*.xml=📰:\
+*.gpg=🔒:\
+*.css=🎨:\
+*.pdf=📚:\
+*.djvu=📚:\
+*.epub=📚:\
+*.csv=📓:\
+*.xlsx=📓:\
+*.tex=📜:\
+*.md=📘:\
+*.r=📊:\
+*.R=📊:\
+*.rmd=📊:\
+*.Rmd=📊:\
+*.m=📊:\
+*.mp3=🎵:\
+*.opus=🎵:\
+*.ogg=🎵:\
+*.m4a=🎵:\
+*.flac=🎼:\
+*.wav=🎼:\
+*.mkv=🎥:\
+*.mp4=🎥:\
+*.webm=🎥:\
+*.mpeg=🎥:\
+*.avi=🎥:\
+*.mov=🎥:\
+*.mpg=🎥:\
+*.wmv=🎥:\
+*.m4b=🎥:\
+*.flv=🎥:\
+*.zip=📦:\
+*.rar=📦:\
+*.7z=📦:\
+*.tar.gz=📦:\
+*.z64=🎮:\
+*.v64=🎮:\
+*.n64=🎮:\
+*.gba=🎮:\
+*.nes=🎮:\
+*.gdi=🎮:\
+*.1=ℹ:\
+*.nfo=ℹ:\
+*.info=ℹ:\
+*.log=📙:\
+*.iso=📀:\
+*.img=📀:\
+*.bib=🎓:\
+*.ged=👪:\
+*.part=💔:\
+*.torrent=🔽:\
+*.jar=♨:\
+*.java=♨:\
+"

@@ -17,8 +17,12 @@ cd /home/"$user"/local/src/suckless/
 git clone https://github.com/npc-glitch/dmenu
 cd dmenu
 make clean install
-cd /home/"$user"/local/src/suckless/sxiv
 make clean install
-cd /home/"$user"/local/src/suckless/dwmblocks
+cd /home/"$user"/local/src/suckless/
+git clone https://github.com/npc-glitch/sxiv
+cd sxiv
 make clean install
-
+cd /home/"$user"/local/src/suckless/
+git clone https://github.com/npc-glitch/dwmblocks
+cd dwmblocks
+make clean install
